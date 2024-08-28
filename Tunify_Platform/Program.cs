@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Tunify_Platform.Data;
 using System.Text.Json.Serialization;
+using Tunify_Platform.Data;
 
 namespace Tunify_Platform
 {
@@ -27,8 +27,32 @@ namespace Tunify_Platform
             builder.Services.AddScoped<IPlaylist, PlaylistService>();
             builder.Services.AddScoped<ISong, SongService>();
 
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Title = "Tunify API",
+                    Version = "v1",
+                    Description = "API for managing playlists, songs, and artists in the Tunify Platform"
+                });
+            });
+
             var app = builder.Build();
+
             app.MapControllers();
+
+            app.UseSwagger(
+             options =>
+             {
+                 options.RouteTemplate = "api/{documentName}/swagger.json";
+             }
+            );
+
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/api/v1/swagger.json", "Tunify API v1");
+                options.RoutePrefix = "TunifyAPI";
+            });
 
             app.MapGet("/", () => "Hello World!");
 
