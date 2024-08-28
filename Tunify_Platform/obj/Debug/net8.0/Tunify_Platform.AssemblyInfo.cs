@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tunify_Platform")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb4bb0380a9d18d19310e148b686a686485fdc44")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b904668a335e594d6a0a5a1f6b9886503c9df105")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tunify_Platform")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tunify_Platform")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
