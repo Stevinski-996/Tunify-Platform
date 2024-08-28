@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uyKF85Zi/5Q=",
+  "dgSpecHash": "V7niWWSmlgg=",
   "success": true,
   "projectFilePath": "/Users/aaa/Desktop/Tunify-Platform/Tunify_Platform/Tunify_Platform.csproj",
   "expectedPackageFiles": [
@@ -71,6 +71,7 @@
     "/Users/aaa/.nuget/packages/microsoft.codeanalysis.razor/6.0.11/microsoft.codeanalysis.razor.6.0.11.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.codeanalysis.scripting.common/4.4.0/microsoft.codeanalysis.scripting.common.4.4.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.codeanalysis.workspaces.common/4.4.0/microsoft.codeanalysis.workspaces.common.4.4.0.nupkg.sha512",
+    "/Users/aaa/.nuget/packages/microsoft.codecoverage/17.10.0/microsoft.codecoverage.17.10.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.data.sqlclient/5.1.5/microsoft.data.sqlclient.5.1.5.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.data.sqlclient.sni.runtime/5.1.1/microsoft.data.sqlclient.sni.runtime.5.1.1.nupkg.sha512",
@@ -80,6 +81,7 @@
     "/Users/aaa/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.20/microsoft.entityframeworkcore.abstractions.7.0.20.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.20/microsoft.entityframeworkcore.analyzers.7.0.20.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.entityframeworkcore.design/7.0.20/microsoft.entityframeworkcore.design.7.0.20.nupkg.sha512",
+    "/Users/aaa/.nuget/packages/microsoft.entityframeworkcore.inmemory/7.0.8/microsoft.entityframeworkcore.inmemory.7.0.8.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.entityframeworkcore.relational/7.0.20/microsoft.entityframeworkcore.relational.7.0.20.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.entityframeworkcore.sqlserver/7.0.20/microsoft.entityframeworkcore.sqlserver.7.0.20.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.entityframeworkcore.tools/7.0.20/microsoft.entityframeworkcore.tools.7.0.20.nupkg.sha512",
@@ -102,9 +104,12 @@
     "/Users/aaa/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/6.35.0/microsoft.identitymodel.protocols.openidconnect.6.35.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.identitymodel.tokens/6.35.0/microsoft.identitymodel.tokens.6.35.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.net.stringtools/17.3.2/microsoft.net.stringtools.17.3.2.nupkg.sha512",
+    "/Users/aaa/.nuget/packages/microsoft.net.test.sdk/17.10.0/microsoft.net.test.sdk.17.10.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.sqlserver.server/1.0.0/microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "/Users/aaa/.nuget/packages/microsoft.testplatform.objectmodel/17.10.0/microsoft.testplatform.objectmodel.17.10.0.nupkg.sha512",
+    "/Users/aaa/.nuget/packages/microsoft.testplatform.testhost/17.10.0/microsoft.testplatform.testhost.17.10.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.visualstudio.web.codegeneration/7.0.12/microsoft.visualstudio.web.codegeneration.7.0.12.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.visualstudio.web.codegeneration.core/7.0.12/microsoft.visualstudio.web.codegeneration.core.7.0.12.nupkg.sha512",
     "/Users/aaa/.nuget/packages/microsoft.visualstudio.web.codegeneration.design/7.0.12/microsoft.visualstudio.web.codegeneration.design.7.0.12.nupkg.sha512",
@@ -216,8 +221,8 @@
     "/Users/aaa/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/system.text.encoding.codepages/6.0.0/system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/system.text.encoding.extensions/4.3.0/system.text.encoding.extensions.4.3.0.nupkg.sha512",
-    "/Users/aaa/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
-    "/Users/aaa/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512",
+    "/Users/aaa/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512",
+    "/Users/aaa/.nuget/packages/system.text.json/8.0.4/system.text.json.8.0.4.nupkg.sha512",
     "/Users/aaa/.nuget/packages/system.text.regularexpressions/4.3.0/system.text.regularexpressions.4.3.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/system.threading/4.3.0/system.threading.4.3.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
@@ -226,7 +231,8 @@
     "/Users/aaa/.nuget/packages/system.threading.timer/4.3.0/system.threading.timer.4.3.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512",
     "/Users/aaa/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "/Users/aaa/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512"
+    "/Users/aaa/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
+    "/Users/aaa/.nuget/packages/xunit.runner.visualstudio/2.8.2/xunit.runner.visualstudio.2.8.2.nupkg.sha512"
   ],
   "logs": []
 }

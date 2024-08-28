@@ -1,11 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Tunify_Platform;
 using Tunify_Platform.Data;
 
 namespace Tunify_Platform.Controllers
@@ -25,10 +19,10 @@ namespace Tunify_Platform.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Song>>> GetSongs()
         {
-          if (_context.Songs == null)
-          {
-              return NotFound();
-          }
+            if (_context.Songs == null)
+            {
+                return NotFound();
+            }
             return await _context.Songs.ToListAsync();
         }
 
@@ -36,10 +30,10 @@ namespace Tunify_Platform.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Song>> GetSong(int id)
         {
-          if (_context.Songs == null)
-          {
-              return NotFound();
-          }
+            if (_context.Songs == null)
+            {
+                return NotFound();
+            }
             var song = await _context.Songs.FindAsync(id);
 
             if (song == null)
@@ -86,10 +80,10 @@ namespace Tunify_Platform.Controllers
         [HttpPost]
         public async Task<ActionResult<Song>> PostSong(Song song)
         {
-          if (_context.Songs == null)
-          {
-              return Problem("Entity set 'TunifyDBContext.Songs'  is null.");
-          }
+            if (_context.Songs == null)
+            {
+                return Problem("Entity set 'TunifyDBContext.Songs'  is null.");
+            }
             _context.Songs.Add(song);
             await _context.SaveChangesAsync();
 

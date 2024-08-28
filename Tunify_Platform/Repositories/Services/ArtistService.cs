@@ -41,5 +41,34 @@ namespace Tunify_Platform
             _context.Entry(artist).State = EntityState.Deleted;
             await _context.SaveChangesAsync();
         }
+
+        public async Task AddSongToArtistAsync(int artistId, int songId)
+        {
+            var artist = await _context.Artists.Include(a => a.Songs).FirstOrDefaultAsync(a => a.ArtistID == artistId);
+            if (artist == null)
+            {
+                throw new Exception("Artist not found");
+            }
+
+            var song = await _context.Songs.FindAsync(songId);
+            if (song == null)
+            {
+                throw new Exception("Song not found");
+            }
+
+            artist.Songs.Add(song);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Song>> GetSongsByArtistAsync(int artistId)
+        {
+            var artist = await _context.Artists.Include(a => a.Songs).FirstOrDefaultAsync(a => a.ArtistID == artistId);
+            if (artist == null)
+            {
+                throw new Exception("Artist not found");
+            }
+
+            return artist.Songs;
+        }
     }
 }

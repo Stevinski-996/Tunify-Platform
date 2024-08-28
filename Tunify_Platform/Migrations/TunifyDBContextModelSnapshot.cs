@@ -52,7 +52,7 @@ namespace Tunify_Platform.Migrations
                             AlbumID = 1,
                             AlbumName = "Album 1",
                             ArtistID = 1,
-                            ReleaseDate = new DateTime(2024, 8, 29, 0, 13, 32, 605, DateTimeKind.Local).AddTicks(7550)
+                            ReleaseDate = new DateTime(2024, 8, 29, 0, 36, 8, 43, DateTimeKind.Local).AddTicks(7890)
                         });
                 });
 
@@ -113,14 +113,14 @@ namespace Tunify_Platform.Migrations
                         new
                         {
                             PlaylistID = 1,
-                            CreatedDate = new DateTime(2024, 8, 29, 0, 13, 32, 605, DateTimeKind.Local).AddTicks(7570),
+                            CreatedDate = new DateTime(2024, 8, 29, 0, 36, 8, 43, DateTimeKind.Local).AddTicks(7910),
                             PlaylistName = "Playlist 1",
                             UserID = 1
                         },
                         new
                         {
                             PlaylistID = 2,
-                            CreatedDate = new DateTime(2024, 8, 29, 0, 13, 32, 605, DateTimeKind.Local).AddTicks(7570),
+                            CreatedDate = new DateTime(2024, 8, 29, 0, 36, 8, 43, DateTimeKind.Local).AddTicks(7920),
                             PlaylistName = "Playlist 2",
                             UserID = 2
                         });
@@ -291,7 +291,7 @@ namespace Tunify_Platform.Migrations
                         {
                             UserID = 1,
                             Email = "user1@example.com",
-                            JoinDate = new DateTime(2024, 8, 29, 0, 13, 32, 605, DateTimeKind.Local).AddTicks(7250),
+                            JoinDate = new DateTime(2024, 8, 29, 0, 36, 8, 43, DateTimeKind.Local).AddTicks(7630),
                             SubscriptionID = 1,
                             Username = "user1"
                         },
@@ -299,7 +299,7 @@ namespace Tunify_Platform.Migrations
                         {
                             UserID = 2,
                             Email = "user2@example.com",
-                            JoinDate = new DateTime(2024, 8, 29, 0, 13, 32, 605, DateTimeKind.Local).AddTicks(7330),
+                            JoinDate = new DateTime(2024, 8, 29, 0, 36, 8, 43, DateTimeKind.Local).AddTicks(7690),
                             SubscriptionID = 1,
                             Username = "user2"
                         });
@@ -329,21 +329,21 @@ namespace Tunify_Platform.Migrations
 
             modelBuilder.Entity("Tunify_Platform.PlaylistSong", b =>
                 {
-                    b.HasOne("Tunify_Platform.Playlist", "Playlist")
+                    b.HasOne("Tunify_Platform.Playlist", "Playlists")
                         .WithMany("PlaylistSongs")
                         .HasForeignKey("PlaylistID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Tunify_Platform.Song", "Song")
+                    b.HasOne("Tunify_Platform.Song", "Songs")
                         .WithMany("PlaylistSongs")
                         .HasForeignKey("SongID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Playlist");
+                    b.Navigation("Playlists");
 
-                    b.Navigation("Song");
+                    b.Navigation("Songs");
                 });
 
             modelBuilder.Entity("Tunify_Platform.Song", b =>
