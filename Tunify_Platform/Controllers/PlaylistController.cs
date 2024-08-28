@@ -1,4 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Tunify_Platform;
+using Tunify_Platform.Data;
 
 namespace Tunify_Platform.Controllers
 {
@@ -54,7 +62,7 @@ namespace Tunify_Platform.Controllers
             var deletedEmployee = _playlist.DeleteAsync(id);
             return Ok(deletedEmployee);
         }
-
+        // POST: api/playlists/{playlistId}/songs/{songId}
         [HttpPost("{playlistId}/songs/{songId}")]
         public async Task<IActionResult> AddSongToPlaylist(int playlistId, int songId)
         {
