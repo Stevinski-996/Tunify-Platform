@@ -12,10 +12,8 @@ namespace Tunify_Platform.Data
         public DbSet<Album> Albums { get; set; }
         public DbSet<Artist> Artists { get; set; }
         public DbSet<PlaylistSong> PlaylistSongs { get; set; }
-        public TunifyDBContext(DbContextOptions<TunifyDBContext> options) : base(options)
-        {
-        }
-
+        public TunifyDBContext(DbContextOptions<TunifyDBContext> options) : base(options) { }
+ 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -24,12 +22,12 @@ namespace Tunify_Platform.Data
                 .HasKey(ps => ps.PlaylistSongID);
 
             modelBuilder.Entity<PlaylistSong>()
-                .HasOne(ps => ps.Playlist)
+                .HasOne(ps => ps.Playlists)
                 .WithMany(p => p.PlaylistSongs)
                 .HasForeignKey(ps => ps.PlaylistID);
 
             modelBuilder.Entity<PlaylistSong>()
-                .HasOne(ps => ps.Song)
+                .HasOne(ps => ps.Songs)
                 .WithMany(s => s.PlaylistSongs)
                 .HasForeignKey(ps => ps.SongID);
             #endregion
