@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Security.Claims;
-using Tunify_Platform.Models;
-using Tunify_Platform.Models.DTO;
+using Tunify_Platform.Modules;
+using Tunify_Platform.Modules.DTO;
 
 namespace Tunify_Platform.Repositories.Interfaces
 {
