@@ -1,10 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Tunify_Platform;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Tunify_Platform.Data
 {
-    public class TunifyDBContext : DbContext
-    {
+        public class TunifyDBContext : IdentityDbContext<ApplicationUser>    {
         public DbSet<User> Users { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<Playlist> Playlists { get; set; }
@@ -12,8 +13,7 @@ namespace Tunify_Platform.Data
         public DbSet<Album> Albums { get; set; }
         public DbSet<Artist> Artists { get; set; }
         public DbSet<PlaylistSong> PlaylistSongs { get; set; }
-        public TunifyDBContext(DbContextOptions<TunifyDBContext> options) : base(options) { }
- 
+        public TunifyDBContext(DbContextOptions<TunifyDBContext> options) : base(options){} 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
