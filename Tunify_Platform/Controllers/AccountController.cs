@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Tunify_Platform.Models.DTO;
+using Tunify_Platform.Modules.DTO;
 using Tunify_Platform.Repositories.Interfaces;
 
 namespace Tunify_Platform.Controllers

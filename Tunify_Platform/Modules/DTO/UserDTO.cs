@@ -1,4 +1,4 @@
-namespace Tunify_Platform.Models.DTO
+namespace Tunify_Platform.Modules.DTO
 {
     public class UserDTO
     {

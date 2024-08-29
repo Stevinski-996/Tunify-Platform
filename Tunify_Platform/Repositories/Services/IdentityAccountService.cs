@@ -1,20 +1,25 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Security.Claims;
 using Tunify_Platform.Modules;
 using Tunify_Platform.Modules.DTO;
 using Tunify_Platform.Repositories.Interfaces;
 
 namespace Tunify_Platform.Repositories.Services
 {
+    
     public class IdentityAccountService : IAccount
+    
     {
+        private JwtTokenServices _jwtTokenService;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public IdentityAccountService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public IdentityAccountService(JwtTokenServices jwtTokenService,UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _jwtTokenService = jwtTokenService ;
         }
 
         public async Task<UserDTO> Register(RegisterDTO registerdUserDto, ModelStateDictionary modelState)
@@ -70,6 +75,10 @@ namespace Tunify_Platform.Repositories.Services
         public async Task Logout()
         {
             await _signInManager.SignOutAsync();
+        }
+        public async Task<string> GenerateJwtToken(ApplicationUser user, IList<string> roles)
+        {
+            return await _jwtTokenService.GenerateToken(user, TimeSpan.FromHours(4));
         }
     }
 }
