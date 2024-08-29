@@ -1,11 +1,13 @@
-using Microsoft.EntityFrameworkCore;
-using Tunify_Platform;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Tunify_Platform;
+using Tunify_Platform.Modules;
 
 namespace Tunify_Platform.Data
 {
-        public class TunifyDBContext : IdentityDbContext<ApplicationUser>    {
+    public class TunifyDBContext : IdentityDbContext<ApplicationUser>
+    {
         public DbSet<User> Users { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<Playlist> Playlists { get; set; }
@@ -13,9 +15,41 @@ namespace Tunify_Platform.Data
         public DbSet<Album> Albums { get; set; }
         public DbSet<Artist> Artists { get; set; }
         public DbSet<PlaylistSong> PlaylistSongs { get; set; }
-        public TunifyDBContext(DbContextOptions<TunifyDBContext> options) : base(options){} 
+        public TunifyDBContext(DbContextOptions<TunifyDBContext> options) : base(options){}
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            string adminRoleId = Guid.NewGuid().ToString();
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole { Id = adminRoleId, Name = "Admin", NormalizedName = "ADMIN" }
+            );
+
+            // Create a default admin user
+            string adminUserId = Guid.NewGuid().ToString();
+            var adminUser = new ApplicationUser
+            {
+                Id = adminUserId,
+                UserName = "admin",
+                NormalizedUserName = "ADMIN",
+                Email = "admin@tunify.com",
+                NormalizedEmail = "ADMIN@TUNIFY.COM",
+                EmailConfirmed = true,
+                SecurityStamp = Guid.NewGuid().ToString()
+            };
+
+            var passwordHasher = new PasswordHasher<ApplicationUser>();
+            adminUser.PasswordHash = passwordHasher.HashPassword(adminUser, "Admin@123");
+
+            modelBuilder.Entity<ApplicationUser>().HasData(adminUser);
+
+            // Assign role to admin user
+            modelBuilder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
+            {
+                RoleId = adminRoleId,
+                UserId = adminUserId
+            });
 
             #region PlaylistSong configuration
             modelBuilder.Entity<PlaylistSong>()
